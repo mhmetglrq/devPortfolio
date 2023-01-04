@@ -17,7 +17,7 @@ class Footer extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             InkWell(
-              onTap: () => openURL("https://github.com/mhmzdev/DevFolio"),
+              onTap: () => openURL("https://github.com/mhmetglrq/devPortfolio"),
               child: const Text(
                 "Flutter",
                 style: TextStyle(color: Colors.blue),
