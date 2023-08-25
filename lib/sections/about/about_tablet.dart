@@ -1,14 +1,12 @@
 import 'package:folio/configs/configs.dart';
 import 'package:folio/utils/about_utils.dart';
 import 'package:folio/utils/utils.dart';
-import 'package:folio/utils/work_utils.dart';
 
 import 'package:folio/widget/custom_text_heading.dart';
 import 'package:universal_html/html.dart' as html;
 import 'package:flutter/material.dart';
 import 'package:folio/constants.dart';
 import 'package:folio/widget/about_me_data.dart';
-import 'package:folio/widget/community_button.dart';
 import 'package:folio/widget/tech_widget.dart';
 
 class AboutTab extends StatelessWidget {
@@ -88,32 +86,32 @@ class AboutTab extends StatelessWidget {
           Space.y!,
           Row(
             children: [
-              Column(
+              const Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
+                children: [
                   AboutMeData(
                     data: "Ad Soyad",
                     information: "Mehmet Güler",
                   ),
                   AboutMeData(
                     data: "Yaş",
-                    information: "22",
+                    information: "23",
                   ),
                 ],
               ),
               SizedBox(
                 width: width > 710 ? width * 0.2 : width * 0.05,
               ),
-              Column(
+              const Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
+                children: [
                   AboutMeData(
                     data: "Email",
                     information: "mhmetglr.q@gmail.com",
                   ),
                   AboutMeData(
                     data: "Konum",
-                    information: "Battalgazi, Malatya",
+                    information: "Türkiye",
                   ),
                 ],
               ),
@@ -121,44 +119,41 @@ class AboutTab extends StatelessWidget {
           ),
           Space.y1!,
           Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(
+              Container(
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    color: AppTheme.c!.primary!,
+                  ),
+                  borderRadius: BorderRadius.circular(5),
+                ),
                 height: AppDimensions.normalize(13),
                 width: AppDimensions.normalize(40),
                 child: OutlinedButton(
-                  onPressed: () => html.window.open(StaticUtils.resume, 'pdf'),
+                  onPressed: () =>
+                      html.window.open("mhmetglrCV.html", "cv", "CV"),
                   child: const Text(
                     "CV",
                   ),
                 ),
               ),
-              Space.x!,
-              Container(
-                width: width * 0.05,
-                decoration: BoxDecoration(
-                  border: Border(
-                    bottom: BorderSide(
-                      color: Colors.grey[900]!,
-                      width: 2.0,
-                    ),
-                  ),
-                ),
-              ),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                    children: WorkUtils.logos
-                        .asMap()
-                        .entries
-                        .map(
-                          (e) => CommunityIconBtn(
-                            icon: e.value,
-                            link: WorkUtils.communityLinks[e.key],
-                            height: WorkUtils.communityLogoHeight[e.key],
-                          ),
-                        )
-                        .toList()),
-              ),
+
+              // SingleChildScrollView(
+              //   scrollDirection: Axis.horizontal,
+              //   child: Row(
+              //       children: WorkUtils.logos
+              //           .asMap()
+              //           .entries
+              //           .map(
+              //             (e) => CommunityIconBtn(
+              //               icon: e.value,
+              //               link: WorkUtils.communityLinks[e.key],
+              //               height: WorkUtils.communityLogoHeight[e.key],
+              //             ),
+              //           )
+              //           .toList()),
+              // ),
             ],
           )
         ],

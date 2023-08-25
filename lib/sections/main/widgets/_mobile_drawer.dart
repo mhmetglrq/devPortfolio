@@ -68,7 +68,8 @@ class _MobileDrawer extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(5.0),
                       side: BorderSide(color: AppTheme.c!.primary!)),
-                  onPressed: () => openURL(StaticUtils.resume),
+                  onPressed: () =>
+                      html.window.open("mhmetglrCV.html", "cv", "CV"),
                   child: const ListTile(
                     leading: Icon(
                       Icons.book,

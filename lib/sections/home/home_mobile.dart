@@ -87,6 +87,11 @@ class HomeMobile extends StatelessWidget {
                           textStyle: AppText.b1,
                         ),
                         TyperAnimatedText(
+                          ' İçerik Üreticisi',
+                          speed: const Duration(milliseconds: 50),
+                          textStyle: AppText.b1,
+                        ),
+                        TyperAnimatedText(
                           ' Bir Arkadaş :)',
                           speed: const Duration(milliseconds: 50),
                           textStyle: AppText.b1,

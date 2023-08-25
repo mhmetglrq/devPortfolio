@@ -24,7 +24,7 @@ class _PortfolioDesktopState extends State<PortfolioDesktop> {
             text: "\nPortfolyo",
           ),
           const CustomSectionSubHeading(
-            text: "Yaptığım projelerden bir kaçı:)\n\n",
+            text: "Öne çıkan projelerim!\n\n",
           ),
           Wrap(
             alignment: WrapAlignment.center,

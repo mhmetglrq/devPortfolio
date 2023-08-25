@@ -18,7 +18,7 @@ class ContactDesktop extends StatelessWidget {
             text: "\nİletişime Geç",
           ),
           const CustomSectionSubHeading(
-            text: "Beraber bir şeyler geliştirelim :)\n\n",
+            text: "Benimle iletişime geçmekten çekinmeyin!\n\n",
           ),
           Space.y!,
           Wrap(
@@ -29,6 +29,7 @@ class ContactDesktop extends StatelessWidget {
                   .entries
                   .map((e) => WidgetAnimator(
                         child: ProjectCard(
+                          projectLink: ContactUtils.links[e.key],
                           projectIconData: e.value,
                           projectTitle: ContactUtils.titles[e.key],
                           projectDescription: ContactUtils.details[e.key],

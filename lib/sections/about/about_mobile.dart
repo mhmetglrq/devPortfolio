@@ -2,7 +2,6 @@ import 'package:flutter/foundation.dart';
 import 'package:folio/configs/configs.dart';
 import 'package:folio/utils/about_utils.dart';
 import 'package:folio/utils/utils.dart';
-import 'package:folio/utils/work_utils.dart';
 
 import 'package:folio/widget/custom_text_heading.dart';
 import 'package:universal_html/html.dart' as html;
@@ -10,7 +9,6 @@ import 'package:universal_html/html.dart' as html;
 import 'package:flutter/material.dart';
 import 'package:folio/constants.dart';
 import 'package:folio/widget/about_me_data.dart';
-import 'package:folio/widget/community_button.dart';
 import 'package:folio/widget/tech_widget.dart';
 
 class AboutMobile extends StatelessWidget {
@@ -75,13 +73,16 @@ class AboutMobile extends StatelessWidget {
             ),
           ),
           Space.y!,
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: kTools
-                .map(
-                  (e) => ToolTechWidget(techName: e),
-                )
-                .toList(),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: kTools
+                  .map(
+                    (e) => ToolTechWidget(techName: e),
+                  )
+                  .toList(),
+            ),
           ),
           Space.y!,
           Divider(
@@ -97,31 +98,39 @@ class AboutMobile extends StatelessWidget {
           ),
           const AboutMeData(
             data: "Yaş",
-            information: "22",
+            information: "23",
           ),
           Space.y!,
-          OutlinedButton(
-              child: const Text("CV"),
-              onPressed: () {
-                kIsWeb
-                    ? html.window.open(StaticUtils.resume, "pdf")
-                    : openURL(StaticUtils.resume);
-              }),
+          Container(
+            decoration: BoxDecoration(
+              border: Border.all(
+                color: AppTheme.c!.primary!,
+              ),
+              borderRadius: BorderRadius.circular(5),
+            ),
+            child: OutlinedButton(
+                child: const Text("CV"),
+                onPressed: () {
+                  kIsWeb
+                      ? html.window.open("mhmetglrCV.html", "cv", "CV")
+                      : openURL("mhmetglrCV.html");
+                }),
+          ),
           Space.y!,
-          Wrap(
-              alignment: WrapAlignment.center,
-              crossAxisAlignment: WrapCrossAlignment.center,
-              children: WorkUtils.logos
-                  .asMap()
-                  .entries
-                  .map(
-                    (e) => CommunityIconBtn(
-                      icon: e.value,
-                      link: WorkUtils.communityLinks[e.key],
-                      height: WorkUtils.communityLogoHeight[e.key],
-                    ),
-                  )
-                  .toList()),
+          // Wrap(
+          //     alignment: WrapAlignment.center,
+          //     crossAxisAlignment: WrapCrossAlignment.center,
+          //     children: WorkUtils.logos
+          //         .asMap()
+          //         .entries
+          //         .map(
+          //           (e) => CommunityIconBtn(
+          //             icon: e.value,
+          //             link: WorkUtils.communityLinks[e.key],
+          //             height: WorkUtils.communityLogoHeight[e.key],
+          //           ),
+          //         )
+          //         .toList()),
         ],
       ),
     );

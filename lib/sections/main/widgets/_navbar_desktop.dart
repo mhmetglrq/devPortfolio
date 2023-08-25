@@ -33,10 +33,7 @@ class _NavbarDesktop extends StatelessWidget {
                 ),
               ),
               onPressed: () {
-                html.window.open(
-                  StaticUtils.resume,
-                  "pdf",
-                );
+                html.window.open("mhmetglrCV.html", "cv", "CV");
               },
               child: Padding(
                 padding: Space.all(1.25, 0.45),

@@ -32,18 +32,19 @@ class StaticUtils {
     "https://img.icons8.com/ios-glyphs/480/ffffff/instagram-new.png",
     "https://img.icons8.com/metro/308/ffffff/linkedin.png",
     "https://img.icons8.com/material-rounded/384/ffffff/github.png",
-    "https://img.icons8.com/ios-filled/500/ffffff/medium-monogram--v1.png"
+    "https://img.icons8.com/ios-filled/500/ffffff/medium-monogram--v1.png",
+    "https://img.icons8.com/material-rounded/84909/youtube",
   ];
 
   static const List<String> socialLinks = [
     "https://instagram.com/mhmetglrr",
     "https://www.linkedin.com/in/mhmetglrq",
     "https://github.com/mhmetglrq",
-    "https://medium.com/@mhmetglr.q"
+    "https://medium.com/@mhmetglr.q",
+    "https://www.youtube.com/channel/UCVrV9qEqYpuZoHnoSh79F9w"
   ];
 
-  static const String resume =
-      'https://drive.google.com/file/d/1bDNNrkQtNVJbXcdwMSx0crQQvAF_nMwV/view?usp=sharing';
+  static const String resume = 'mhmetglrCV.html';
 
   static const String gitHub = 'https://github.com/mhmetglrq';
 }

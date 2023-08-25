@@ -4,9 +4,7 @@ import 'package:folio/constants.dart';
 import 'package:folio/utils/about_utils.dart';
 
 import 'package:folio/utils/utils.dart';
-import 'package:folio/utils/work_utils.dart';
 import 'package:folio/widget/about_me_data.dart';
-import 'package:folio/widget/community_button.dart';
 import 'package:folio/widget/custom_text_heading.dart';
 import 'package:folio/widget/tech_widget.dart';
 
@@ -85,9 +83,11 @@ class AboutDesktop extends StatelessWidget {
                       Space.y!,
                       Row(
                         children: kTools
-                            .map((e) => ToolTechWidget(
-                                  techName: e,
-                                ))
+                            .map(
+                              (e) => ToolTechWidget(
+                                techName: e,
+                              ),
+                            )
                             .toList(),
                       ),
                       Space.y!,
@@ -95,32 +95,32 @@ class AboutDesktop extends StatelessWidget {
                         color: Colors.grey[800],
                         thickness: AppDimensions.normalize(0.5),
                       ),
-                      Row(
+                      const Row(
                         children: [
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
-                            children: const [
+                            children: [
                               AboutMeData(
                                 data: "Ad Soyad",
                                 information: "Mehmet Güler",
                               ),
                               AboutMeData(
                                 data: "Yaş",
-                                information: "22",
+                                information: "23",
                               ),
                             ],
                           ),
-                          const Spacer(),
+                          Spacer(),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
-                            children: const [
+                            children: [
                               AboutMeData(
                                 data: "Email",
                                 information: "mhmetglr.q@gmail.com",
                               ),
                               AboutMeData(
                                 data: "Konum",
-                                information: "Battalgazi, Malatya",
+                                information: "Türkiye",
                               ),
                             ],
                           ),
@@ -129,33 +129,34 @@ class AboutDesktop extends StatelessWidget {
                       Space.y1!,
                       Row(
                         children: [
-                          SizedBox(
+                          Container(
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                color: AppTheme.c!.primary!,
+                              ),
+                              borderRadius: BorderRadius.circular(5),
+                            ),
                             height: AppDimensions.normalize(13),
                             width: AppDimensions.normalize(40),
                             child: OutlinedButton(
-                              onPressed: () =>
-                                  html.window.open(StaticUtils.resume, 'pdf'),
+                              onPressed: () => html.window
+                                  .open("mhmetglrCV.html", "cv", "CV"),
                               child: const Text(
                                 "CV",
                               ),
                             ),
                           ),
-                          Space.x1!,
-                          Container(
-                            color: Colors.grey[900]!,
-                            width: AppDimensions.normalize(30),
-                            height: AppDimensions.normalize(0.5),
-                          ),
-                          ...WorkUtils.logos.asMap().entries.map(
-                                (e) => Expanded(
-                                  child: CommunityIconBtn(
-                                    icon: e.value,
-                                    link: WorkUtils.communityLinks[e.key],
-                                    height:
-                                        WorkUtils.communityLogoHeight[e.key],
-                                  ),
-                                ),
-                              )
+
+                          // ...WorkUtils.logos.asMap().entries.map(
+                          //       (e) => Expanded(
+                          //         child: CommunityIconBtn(
+                          //           icon: e.value,
+                          //           link: WorkUtils.communityLinks[e.key],
+                          //           height:
+                          //               WorkUtils.communityLogoHeight[e.key],
+                          //         ),
+                          //       ),
+                          //     )
                         ],
                       ),
                     ],

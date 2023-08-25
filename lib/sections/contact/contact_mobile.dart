@@ -16,13 +16,14 @@ class ContactMobileTab extends StatelessWidget {
           text: "\nİletişime Geç",
         ),
         const CustomSectionSubHeading(
-          text: "Beraber bir şeyler geliştirelim :)\n\n",
+          text: "Benimle iletişime geçmekten çekinme!\n\n",
         ),
         CarouselSlider.builder(
-          itemCount: 2,
+          itemCount: 1,
           itemBuilder: (BuildContext context, int itemIndex, int i) => Padding(
             padding: const EdgeInsets.symmetric(vertical: 10.0),
             child: ProjectCard(
+              projectLink: ContactUtils.links[i],
               projectIconData: ContactUtils.contactIcon[i],
               projectTitle: ContactUtils.titles[i],
               projectDescription: ContactUtils.details[i],
