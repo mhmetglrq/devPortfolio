@@ -41,7 +41,7 @@ class StaticUtils {
     "https://www.linkedin.com/in/mhmetglrq",
     "https://github.com/mhmetglrq",
     "https://medium.com/@mhmetglr.q",
-    "https://www.youtube.com/channel/UCVrV9qEqYpuZoHnoSh79F9w"
+    "https://www.youtube.com/@thecodingbear"
   ];
 
   static const String resume = 'mhmetglrCV.html';
